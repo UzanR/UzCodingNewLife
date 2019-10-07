@@ -1,0 +1,10 @@
+/*Please add ; after each select statement*/
+/*
+WEEKDAY(date)
+0 = Monday, 1 = Tuesday, 2 = Wednesday, 3 = Thursday, 4 = Friday, 5 = Saturday, 6 = Sunday
+*/
+CREATE PROCEDURE importantEvents()
+BEGIN
+    select * from events
+    order by WEEKDAY(event_date) asc, participants desc;
+END
