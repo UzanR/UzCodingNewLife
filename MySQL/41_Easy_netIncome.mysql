@@ -1,0 +1,8 @@
+/*Please add ; after each select statement*/
+CREATE PROCEDURE netIncome()
+BEGIN
+	select year(date) as year, quarter(date) as quarter, SUM(profit) - SUM(loss) as net_profit
+    from accounting
+    group by year(date), quarter(date)
+    order by year(date), quarter(date);
+END
