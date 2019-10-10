@@ -1,0 +1,11 @@
+/*Please add ; after each select statement*/
+CREATE PROCEDURE scholarshipsDistribution()
+BEGIN
+	select candidate_id as student_id
+    from candidates where candidate_id not in
+    (select student_id
+    from candidates A
+    inner join detentions B
+    on A.candidate_id = B.student_id)
+    order by candidate_id;
+END

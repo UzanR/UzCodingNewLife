@@ -1,0 +1,7 @@
+/*Please add ; after each select statement*/
+CREATE PROCEDURE companyEmployees()
+BEGIN
+	select dep_name, emp_name
+    from departments, employees
+    order by dep_name, emp_name;
+END
