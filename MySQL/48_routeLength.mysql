@@ -1,0 +1,8 @@
+/*Please add ; after each select statement*/
+CREATE PROCEDURE routeLength()
+BEGIN
+	select ROUND(SUM(SQRT(POWER(B.x-A.x,2)+POWER(B.y-A.y,2))),9) as total
+    from cities as A 
+    cross join cities as B
+    where A.id = B.id-1;
+END
